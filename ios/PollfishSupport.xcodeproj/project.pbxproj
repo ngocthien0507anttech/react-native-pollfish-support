@@ -6,10 +6,6 @@
 	objectVersion = 46;
 	objects = {
 
-/* Begin PBXBuildFile section */
-		E31FEED625E37BF2005D9568 /* PollfishSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = E31FEED525E37BF2005D9568 /* PollfishSupport.m */; };
-/* End PBXBuildFile section */
-
 /* Begin PBXCopyFilesBuildPhase section */
 		58B511D91A9E6C8500147676 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -24,8 +20,6 @@
 
 /* Begin PBXFileReference section */
 		134814201AA4EA6300B7C361 /* PollfishSupport.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = PollfishSupport.a; path = libPollfishSupport.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		E31FEED425E37BF2005D9568 /* PollfishSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PollfishSupport.h; sourceTree = "<group>"; };
-		E31FEED525E37BF2005D9568 /* PollfishSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PollfishSupport.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,8 +44,6 @@
 		58B511D21A9E6C8500147676 = {
 			isa = PBXGroup;
 			children = (
-				E31FEED425E37BF2005D9568 /* PollfishSupport.h */,
-				E31FEED525E37BF2005D9568 /* PollfishSupport.m */,
 				134814211AA4EA7D00B7C361 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -113,7 +105,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E31FEED625E37BF2005D9568 /* PollfishSupport.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
