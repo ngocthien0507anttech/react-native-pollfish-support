@@ -9,14 +9,14 @@ Pod::Spec.new do |s|
   s.description  = <<-DESC
                   react-native-pollfish-support
                    DESC
-  s.homepage     = "https://github.com/github_account/react-native-pollfish-support"
+  s.homepage     = "https://github.com/ngocthien0507anttech/react-native-pollfish-support"
   # brief license entry:
   s.license      = "MIT"
   # optional - use expanded license entry instead:
   # s.license    = { :type => "MIT", :file => "LICENSE" }
-  s.authors      = { "Your Name" => "yourname@email.com" }
+  s.authors      = { "Ant Tech Ngoc Thien" => "ngoc-thien.nguyen@ant-tech.eu" }
   s.platforms    = { :ios => "9.0" }
-  s.source       = { :git => "https://github.com/github_account/react-native-pollfish-support.git", :tag => "#{s.version}" }
+  s.source       = { :git => "https://github.com/ngocthien0507anttech/react-native-pollfish-support", :tag => "#{s.version}" }
 
   s.source_files = "ios/**/*.{h,c,m,swift}"
   s.requires_arc = true
