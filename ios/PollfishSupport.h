@@ -1,16 +1,14 @@
-#if __has_include(<React/RCTBridgeModule.h>)
-#import <React/RCTBridgeModule.h>
-#else
-#import "RCTBridgeModule.h"
-#endif
-
-#if __has_include(<React/RCTEventEmitter.h>)
-#import <React/RCTEventEmitter.h>
-#else
+#if __has_include("RCTEventEmitter.h")
 #import "RCTEventEmitter.h"
+#else
+#import <React/RCTEventEmitter.h>
 #endif
 
-#import <Pollfish/Pollfish.h>
+#if __has_include("Pollfish.h")
+#import "Pollfish.h"
+#else
+#import <pollfish/Pollfish.h>
+#endif
 
 @interface PollfishSupport : RCTEventEmitter <RCTBridgeModule>
 
