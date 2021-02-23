@@ -1,3 +1,3 @@
-import Pollfish from "./src/Pollfish";
+import Pollfish from "./Pollfish";
 
 export default Pollfish;
