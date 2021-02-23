@@ -1,40 +1,44 @@
 package com.anttech.reactnativepollfishsupport;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.os.Handler;
 import android.os.Looper;
 import android.util.Log;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
-import com.facebook.react.bridge.Callback;
+import com.facebook.react.bridge.Promise;
+import com.facebook.react.bridge.WritableMap;
+import com.facebook.react.bridge.WritableNativeMap;
+import com.facebook.react.modules.core.DeviceEventManagerModule;
 
 import com.pollfish.classes.SurveyInfo;
 import com.pollfish.interfaces.PollfishClosedListener;
-import com.pollfish.interfaces.PollfishOpenedListener;
 import com.pollfish.interfaces.PollfishCompletedSurveyListener;
-import com.pollfish.interfaces.PollfishSurveyNotAvailableListener;
+import com.pollfish.interfaces.PollfishOpenedListener;
 import com.pollfish.interfaces.PollfishReceivedSurveyListener;
+import com.pollfish.interfaces.PollfishSurveyNotAvailableListener;
 import com.pollfish.interfaces.PollfishUserNotEligibleListener;
 import com.pollfish.main.PollFish;
 import com.pollfish.main.PollFish.ParamsBuilder;
 
 import java.util.HashMap;
 
-public class PollfishSupportModule extends ReactContextBaseJavaModule {
 
+public class PollfishSupportModule extends ReactContextBaseJavaModule {
     private static final String TAG = "PollfishSupport";
     private EventManager eventManager;
 
-    private Intent mSurveyIntent;
-    private Callback requestSurveyCallback;
+    private ReactApplicationContext mContext;
+
+    private boolean isInitializing = false;
 
     public PollfishSupportModule(ReactApplicationContext reactContext) {
         super(reactContext);
-        this.reactContext = reactContext;
+        mContext = reactContext;
+        this.eventManager = new EventManager(reactContext);
     }
 
     @Override
@@ -56,7 +60,7 @@ public class PollfishSupportModule extends ReactContextBaseJavaModule {
             PollFish.initWith( getCurrentActivity(),
                 new ParamsBuilder(apiKey)
                     .releaseMode(!debugMode) // Due to inconsitency with iOS, we negate whatever is passed in for production
-                    .rewardMode(autoMode) // Set true to avoid auto-popup behavior
+                    .customMode(autoMode) // Set true to avoid auto-popup behavior
                     .offerWallMode(offerWallMode)
                     .requestUUID(uuid) // Unique user identifier, passed back in the callback
                     .pollfishReceivedSurveyListener(new PollfishReceivedSurveyListener() {
@@ -108,10 +112,17 @@ public class PollfishSupportModule extends ReactContextBaseJavaModule {
                     .pollfishClosedListener(new PollfishClosedListener() {
                         @Override
                         public void onPollfishClosed() {
-                            eventManager.send("surveyClosed");
+                            WritableMap map = new WritableNativeMap();
+                            map.putBoolean("wasClosedByInitialize", isInitializing);
+                            eventManager.send("surveyClosed", map);
                         }
                     })
                     .build());
+            if (autoMode) {
+                isInitializing = true;
+                PollFish.hide();
+                isInitializing = false;
+            }
           }
         });
 
