@@ -2,7 +2,7 @@
   "name": "react-native-pollfish-support",
   "title": "React Native Pollfish Support",
   "version": "1.0.0",
-  "description": "TODO",
+  "description": "library support for pollfish surveys",
   "main": "index.js",
   "files": [
     "README.md",
@@ -16,15 +16,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/github_account/react-native-pollfish-support.git",
-    "baseUrl": "https://github.com/github_account/react-native-pollfish-support"
+    "url": "git+https://github.com/ngocthien0507anttech/react-native-pollfish-support.git",
+    "baseUrl": "https://github.com/ngocthien0507anttech/react-native-pollfish-support"
   },
   "keywords": [
     "react-native"
   ],
   "author": {
     "name": "Ant Tech Ngoc Thien",
-    "email": "yourname@email.com"
+    "email": "ngoc-thien.nguyen@ant-tech.eu"
   },
   "license": "MIT",
   "licenseFilename": "LICENSE",
