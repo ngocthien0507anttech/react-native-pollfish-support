@@ -1,7 +1,7 @@
 {
   "name": "react-native-pollfish-support",
   "title": "React Native Pollfish Support",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "library support for pollfish surveys",
   "main": "index.js",
   "files": [
