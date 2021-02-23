@@ -44,7 +44,7 @@ import Pollfish from 'react-native-pollfish-support'
   const initPollfishSurvey = () =>
     Pollfish.initialize(
       pollfishConfig.pollfishApiKey,
-      pollfishConfig.releaseMode,
+      pollfishConfig.debugMode,
       pollfishConfig.customMode,
       pollfishConfig.offerWallMode
     )
