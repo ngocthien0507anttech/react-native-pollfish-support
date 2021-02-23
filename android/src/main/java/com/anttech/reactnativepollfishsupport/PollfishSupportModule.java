@@ -125,9 +125,6 @@ public class PollfishSupportModule extends ReactContextBaseJavaModule {
             }
           }
         });
-
-
-
     }
 
     @ReactMethod
@@ -157,5 +154,4 @@ public class PollfishSupportModule extends ReactContextBaseJavaModule {
     private void sendEvent(String eventName, @Nullable WritableMap params) {
         getReactApplicationContext().getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class).emit(eventName, params);
     }
-
 }
