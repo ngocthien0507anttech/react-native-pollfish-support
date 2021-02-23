@@ -5,10 +5,6 @@
 
 `$ yarn add ngocthien0507anttech/react-native-pollfish-support
 
-### Mostly automatic installation
-
-`$ react-native link react-native-pollfish-full`
-
 ### Manual installation
 #### iOS
 
