@@ -22,7 +22,7 @@ Pod::Spec.new do |s|
   s.requires_arc = true
 
   s.dependency "React"
-  s.dependency "Pollfish"
+  s.dependency "Pollfish", '~> 5.5.2'
   # ...
   # s.dependency "..."
 end

@@ -1,7 +1,7 @@
 {
   "name": "react-native-pollfish-support",
   "title": "React Native Pollfish Support",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "library support for pollfish surveys",
   "main": "index.js",
   "files": [
@@ -23,9 +23,11 @@
   "keywords": [
     "react-native",
     "pollfish",
-    "pollfish support",
-    "surveys",
-    "react native surveys"
+    "pollfish-support",
+    "pollfish-surveys",
+    "react native surveys",
+    "react-native-pollfish",
+    "react-native-pollfish-support"
   ],
   "author": {
     "name": "Ant Tech Ngoc Thien",
